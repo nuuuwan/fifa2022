@@ -9,8 +9,8 @@ const MIN_WIDTH_FOR_LABELS = 750;
 const STYLE_IMAGE = {
   width: "3vh",
   height: "3vh",
-  padding: 1,
-  margin: 2,
+  padding: 0,
+  margin: 0,
 };
 
 export default function CountryView({ country, isWinner }) {
@@ -28,7 +28,9 @@ export default function CountryView({ country, isWinner }) {
       <Stack direction="row" gap={2}>
         <WinnerIcon style={{ color }} />
         <Avatar src={imageSrc} style={STYLE_IMAGE} />
-        {showLabels ? <Typography variant="body1">{country}</Typography> : null}
+        {showLabels ? (
+          <Typography variant="caption">{country}</Typography>
+        ) : null}
       </Stack>
     </Box>
   );

@@ -15,9 +15,9 @@ const STYLE = {
 export default function CustomBottomNavigation({ onClickRefresh }) {
   return (
     <Box style={STYLE}>
-      <BottomNavigation>
+      <BottomNavigation style={{ background: "black" }}>
         <BottomNavigationAction
-          icon={<CasinoIcon />}
+          icon={<CasinoIcon style={{ color: "white" }} />}
           onClick={onClickRefresh}
         />
       </BottomNavigation>

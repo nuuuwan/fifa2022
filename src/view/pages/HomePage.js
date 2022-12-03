@@ -6,9 +6,15 @@ import Simulate from "../../nonview/core/Simulate";
 
 import StageView from "../atoms/StageView";
 import CustomBottomNavigation from "../molecules/CustomBottomNavigation";
+import CustomHeader from "../molecules/CustomHeader";
 
 const MAX_N_REFRESH = 10;
 const TIME_MS_REFRESH = 50;
+
+const STYLE_BODY = {
+  marginTop: 72,
+  marginLeft: 32,
+};
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -63,11 +69,14 @@ export default class HomePage extends Component {
 
     return (
       <Box>
-        <table>
-          <tbody>
-            <tr>{renderedInner}</tr>
-          </tbody>
-        </table>
+        <CustomHeader />
+        <Box style={STYLE_BODY}>
+          <table>
+            <tbody>
+              <tr>{renderedInner}</tr>
+            </tbody>
+          </table>
+        </Box>
         <CustomBottomNavigation
           onClickRefresh={this.onClickRefresh.bind(this)}
         />

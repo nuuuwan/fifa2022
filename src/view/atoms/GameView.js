@@ -6,9 +6,9 @@ import CountryView from "./CountryView";
 
 const STYLE_GAME = {
   border: "1px gray solid",
-  borderRadius: 6,
-  padding: 6,
-  margin: 6,
+  borderRadius: 12,
+  padding: 3,
+  margin: 2,
 };
 
 export default function GameView({
