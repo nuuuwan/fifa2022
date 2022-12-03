@@ -12,10 +12,7 @@ const STYLE = {
   right: 0,
 };
 
-export default function CustomBottomNavigation() {
-  const onClickRefresh = function () {
-    window.location.reload();
-  };
+export default function CustomBottomNavigation({ onClickRefresh }) {
   return (
     <Box style={STYLE}>
       <BottomNavigation>
