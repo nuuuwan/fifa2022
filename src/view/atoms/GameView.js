@@ -1,13 +1,13 @@
-import TeamView from "./TeamView";
+import CountryView from "./CountryView";
 
-export default function GameView({ t1, t2 }) {
+export default function GameView({ country1, country2 }) {
   return (
     <div>
       <div>
-        <TeamView t={t1} />
+        <CountryView country={country1} />
       </div>
       <div>
-        <TeamView t={t2} />
+        <CountryView country={country2} />
       </div>
     </div>
   );
