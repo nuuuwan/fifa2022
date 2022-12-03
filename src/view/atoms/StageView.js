@@ -1,9 +1,19 @@
 import GameView from "./GameView";
 
-export default function StageView({ gameList }) {
+export default function StageView({ gameList, gameList2 }) {
   const renderedInner = gameList.map(function ([country1, country2], iGame) {
     const key = "game-" + iGame;
-    return <GameView key={key} country1={country1} country2={country2} />;
+    const iGame2A = parseInt(iGame / 2);
+    const iGame2B = iGame % 2;
+    const winner = gameList2[iGame2A][iGame2B];
+    return (
+      <GameView
+        key={key}
+        country1={country1}
+        country2={country2}
+        winner={winner}
+      />
+    );
   });
   return <td>{renderedInner}</td>;
 }

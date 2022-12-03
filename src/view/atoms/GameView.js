@@ -7,14 +7,14 @@ const STYLE_GAME = {
   margin: 6,
 };
 
-export default function GameView({ country1, country2 }) {
+export default function GameView({ country1, country2, winner }) {
   return (
     <div style={STYLE_GAME}>
       <div>
-        <CountryView country={country1} />
+        <CountryView country={country1} isWinner={winner === country1} />
       </div>
       <div>
-        <CountryView country={country2} />
+        <CountryView country={country2} isWinner={winner === country2} />
       </div>
     </div>
   );
