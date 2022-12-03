@@ -1,22 +1,31 @@
 import R16 from "../constants/R16";
+import ODDS from "./ODDS";
+
+const P_NOISE = 0.2;
 
 export default class Simulate {
-  static playOffSingle([t1, t2]) {
-    return Math.random() > 0.5 ? t1 : t2;
+  static playOffSingle([country1, country2]) {
+    const p1 = ODDS[country1];
+    const p2 = ODDS[country2];
+
+    const p1win = (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
+    return Math.random() < p1win ? country1 : country2;
   }
 
   static playOff(pairList) {
-    return pairList.map(Simulate.playOffSingle).reduce(function (pairList2, t) {
-      if (
-        pairList2.length === 0 ||
-        pairList2[pairList2.length - 1].length === 2
-      ) {
-        pairList2.push([t]);
-      } else {
-        pairList2[pairList2.length - 1].push(t);
-      }
-      return pairList2;
-    }, []);
+    return pairList
+      .map(Simulate.playOffSingle)
+      .reduce(function (pairLiscountry2, country) {
+        if (
+          pairLiscountry2.length === 0 ||
+          pairLiscountry2[pairLiscountry2.length - 1].length === 2
+        ) {
+          pairLiscountry2.push([country]);
+        } else {
+          pairLiscountry2[pairLiscountry2.length - 1].push(country);
+        }
+        return pairLiscountry2;
+      }, []);
   }
 
   static random() {
