@@ -1,4 +1,6 @@
-import R16 from "../../nonview/constants/R16"
+import Simulate from "../../nonview/core/Simulate";
+
 export default function HomePage() {
-  return JSON.stringify(R16);
+  const simulationResults = Simulate.random();
+  return JSON.stringify(simulationResults);
 }
