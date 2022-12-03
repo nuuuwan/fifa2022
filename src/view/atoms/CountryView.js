@@ -22,7 +22,7 @@ export default function CountryView({ country, isWinner }) {
   const WinnerIcon = isWinner ? CheckBoxIcon : CancelIcon;
   const opacity = isWinner ? 1 : 0.2;
   const color = isWinner ? "darkgreen" : "red";
-  const width = showLabels ? 170 : 80;
+  const width = showLabels ? 180 : 80;
   return (
     <Box style={{ opacity, width }}>
       <Stack direction="row" gap={2}>
