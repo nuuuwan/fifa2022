@@ -47,11 +47,17 @@ export default class HomePage extends Component {
     const nStages = Object.values(simulationResults).length;
     let renderedInner = [];
     for (let iStage = 0; iStage < nStages - 1; iStage++) {
+      const stageType = Object.keys(simulationResults)[iStage];
       const gameList = Object.values(simulationResults)[iStage];
       const gameList2 = Object.values(simulationResults)[iStage + 1];
       const key = "stage-" + iStage;
       renderedInner.push(
-        <StageView key={key} gameList={gameList} gameList2={gameList2} />
+        <StageView
+          key={key}
+          stageType={stageType}
+          gameList={gameList}
+          gameList2={gameList2}
+        />
       );
     }
 
