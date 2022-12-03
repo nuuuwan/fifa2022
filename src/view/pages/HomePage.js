@@ -72,9 +72,7 @@ export default class HomePage extends Component {
       <Box>
         <CustomHeader />
         <Box style={STYLE_BODY}>
-          <Typography variant="caption">
-            Last Updated: Dec 2
-          </Typography>
+          <Typography variant="caption">Last Updated: Dec 2</Typography>
           <table>
             <tbody>
               <tr>{renderedInner}</tr>
