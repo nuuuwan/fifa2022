@@ -1,5 +1,6 @@
 {
   "name": "fifa2022",
+  "homepage": "fifa2022",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
