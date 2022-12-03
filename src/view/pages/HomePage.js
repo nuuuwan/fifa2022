@@ -2,8 +2,8 @@ import { Box } from "@mui/material";
 
 import Simulate from "../../nonview/core/Simulate";
 
-import StageView from "../../view/atoms/StageView";
-import CustomBottomNavigation from "./CustomBottomNavigation";
+import StageView from "../atoms/StageView";
+import CustomBottomNavigation from "../molecules/CustomBottomNavigation";
 
 export default function HomePage() {
   const simulationResults = Simulate.random();
