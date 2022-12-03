@@ -1,27 +1,15 @@
 import Simulate from "../../nonview/core/Simulate";
 
-function GameView({ t1, t2 }) {
-  return (
-    <div>
-      <div>{t1}</div>
-      <div>{t2}</div>
-    </div>
-  );
-}
-
-function StageView({ gameList }) {
-  const renderedInner = gameList.map(function ([t1, t2]) {
-    return <GameView t1={t1} t2={t2} />;
-  });
-  return <td>{renderedInner}</td>;
-}
+import StageView from "../../view/atoms/StageView";
 
 export default function HomePage() {
   const simulationResults = Simulate.random();
   const renderedInner = Object.values(simulationResults).map(function (
-    gameList
+    gameList,
+    iStage
   ) {
-    return <StageView gameList={gameList} />;
+    const key = "stage-" + iStage;
+    return <StageView key={key} gameList={gameList} />;
   });
 
   return (
