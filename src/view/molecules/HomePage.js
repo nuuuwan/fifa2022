@@ -1,6 +1,9 @@
+import { Box } from "@mui/material";
+
 import Simulate from "../../nonview/core/Simulate";
 
 import StageView from "../../view/atoms/StageView";
+import CustomBottomNavigation from "./CustomBottomNavigation";
 
 export default function HomePage() {
   const simulationResults = Simulate.random();
@@ -13,10 +16,13 @@ export default function HomePage() {
   });
 
   return (
-    <table>
-      <tbody>
-        <tr>{renderedInner}</tr>
-      </tbody>
-    </table>
+    <Box>
+      <table>
+        <tbody>
+          <tr>{renderedInner}</tr>
+        </tbody>
+      </table>
+      <CustomBottomNavigation />
+    </Box>
   );
 }
