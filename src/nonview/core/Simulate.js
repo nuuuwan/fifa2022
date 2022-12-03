@@ -1,7 +1,7 @@
 import R16 from "../constants/R16";
 import ODDS from "./ODDS";
 
-const P_NOISE = 0.2;
+const P_NOISE = 0.05;
 
 export default class Simulate {
   static playOffSingle([country1, country2]) {
