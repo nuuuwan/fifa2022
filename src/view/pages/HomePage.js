@@ -12,9 +12,10 @@ const MAX_N_REFRESH = 10;
 const TIME_MS_REFRESH = 50;
 
 const STYLE_BODY = {
-  position: "fixed",
-  top: 72,
-  left: 32,
+  marginTop: 72,
+  marginBottom: 72,
+  marginLeft: 32,
+  overflow: "scroll",
 };
 
 export default class HomePage extends Component {
