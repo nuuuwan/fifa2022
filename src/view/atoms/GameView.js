@@ -7,7 +7,7 @@ import CountryView from "./CountryView";
 const STYLE_GAME = {
   border: "1px gray solid",
   borderRadius: 12,
-  padding: 3,
+  padding: 2,
   margin: 2,
 };
 

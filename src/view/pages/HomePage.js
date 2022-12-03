@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 import Simulate from "../../nonview/core/Simulate";
 
@@ -12,8 +12,9 @@ const MAX_N_REFRESH = 10;
 const TIME_MS_REFRESH = 50;
 
 const STYLE_BODY = {
-  marginTop: 72,
-  marginLeft: 32,
+  position: "fixed",
+  top: 72,
+  left: 32,
 };
 
 export default class HomePage extends Component {
@@ -71,6 +72,9 @@ export default class HomePage extends Component {
       <Box>
         <CustomHeader />
         <Box style={STYLE_BODY}>
+          <Typography variant="caption">
+            Last Updated: Dec 2
+          </Typography>
           <table>
             <tbody>
               <tr>{renderedInner}</tr>
