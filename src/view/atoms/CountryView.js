@@ -2,9 +2,7 @@ import { Avatar, Box, Stack, Typography } from "@mui/material";
 
 import Flags from "../../nonview/core/Flags";
 
-const STYLE = {
-  width: 120,
-}
+const MIN_WIDTH_FOR_LABELS = 750;
 
 const STYLE_IMAGE = {
   width: "3vh",
@@ -18,11 +16,14 @@ export default function CountryView({ country }) {
     return null;
   }
   const imageSrc = Flags.getImageSrc(country);
+  const showLabels = window.innerWidth > MIN_WIDTH_FOR_LABELS;
   return (
-    <Box style={STYLE}>
+    <Box>
       <Stack direction="row">
         <Avatar src={imageSrc} style={STYLE_IMAGE} />
-        <Typography variant="body1">{country}</Typography>
+        {showLabels ? (
+          <Typography variant="body1">{country}</Typography>
+        ): null}        
       </Stack>
     </Box>
   );
