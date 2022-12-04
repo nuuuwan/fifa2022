@@ -13,7 +13,7 @@ const MODE = "normal";
 
 const STYLE = {
   margin: 32,
-}
+};
 
 export default class MonteCarloPage extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ export default class MonteCarloPage extends Component {
             function () {
               this.refresh();
             }.bind(this),
-            TIME_MS_REFRESH / (Math.log10(iIter)  + 1)
+            TIME_MS_REFRESH / (Math.log10(iIter) + 1)
           );
         }
       }
@@ -76,7 +76,7 @@ export default class MonteCarloPage extends Component {
     return (
       <Box style={STYLE}>
         <table>
-        <thead>
+          <thead>
             <tr>
               <th></th>
               <th>
@@ -88,8 +88,6 @@ export default class MonteCarloPage extends Component {
                 </Typography>
               </th>
             </tr>
-
-          
           </thead>
           <tbody>
             {sortedCountryAndWins.map(function ([country, nWins]) {
@@ -97,7 +95,11 @@ export default class MonteCarloPage extends Component {
               return (
                 <tr key={key}>
                   <td>
-                    <CountryView country={country} isWinner={true} showFull={true}/>
+                    <CountryView
+                      country={country}
+                      isWinner={true}
+                      showFull={true}
+                    />
                   </td>
                   <td>
                     <Typography
@@ -116,8 +118,8 @@ export default class MonteCarloPage extends Component {
                 </tr>
               );
             })}
-            </tbody>
-            <tfoot>
+          </tbody>
+          <tfoot>
             <tr>
               <th>
                 <Typography variant="body1">Total Simulations</Typography>
@@ -128,8 +130,6 @@ export default class MonteCarloPage extends Component {
                 </Typography>
               </th>
             </tr>
-
-          
           </tfoot>
         </table>
       </Box>

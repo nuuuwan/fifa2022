@@ -17,7 +17,7 @@ export default function CountryView({ country, isWinner, showFull }) {
     return null;
   }
   const imageSrc = Flags.getImageSrc(country);
-  const showLabels = (window.innerWidth > MIN_WIDTH_FOR_LABELS) || showFull;
+  const showLabels = window.innerWidth > MIN_WIDTH_FOR_LABELS || showFull;
   const opacity = isWinner ? 1 : 0.2;
   const color = isWinner ? "darkgreen" : "gray";
   const width = showLabels ? 120 : 50;
