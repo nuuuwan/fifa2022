@@ -24,6 +24,6 @@ export default class Format {
       }
       return Format.percent(f);
     }
-    return "1/" + Format.roundLog(1 / f).toLocaleString();
+    return "1 in " + Format.roundLog(1 / f).toLocaleString();
   }
 }

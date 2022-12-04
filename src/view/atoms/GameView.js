@@ -24,7 +24,7 @@ export default function GameView({
     const h = pWinner > 0.5 ? 210 : 0;
     const s = 100;
     const l = 80 - Math.abs(pWinner - 0.5) * 2 * 60;
-    const a = 0.33;
+    const a = 0.1;
     background = `hsla(${h},${s}%,${l}%,${a})`;
   }
 
