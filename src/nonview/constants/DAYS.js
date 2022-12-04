@@ -9,12 +9,7 @@ const DAYS = {
     "Dec 6 (Tue)",
     "Dec 6 (Tue)",
   ],
-  r8: [
-    "Dec 9 (Fri)",
-    "Dec 9 (Fri)",
-    "Dec 10 (Sat)",
-    "Dec 10 (Sat)",
-  ],
+  r8: ["Dec 9 (Fri)", "Dec 9 (Fri)", "Dec 10 (Sat)", "Dec 10 (Sat)"],
   r4: ["Dec 13 (Tue)", "Dec 14 (Wed)"],
   r2: ["Dec 18 (Sun)"],
 };

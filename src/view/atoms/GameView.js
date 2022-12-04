@@ -42,12 +42,10 @@ export default function GameView({
   return (
     <Box style={style}>
       <Grid container justify="flex-end" gap={0.5}>
-        <Typography variant="caption" sx={{color: "gray"}}>
+        <Typography variant="caption" sx={{ color: "gray" }}>
           {date}
         </Typography>
-        <Typography variant="caption">
-          {Format.fraction(pWinner)}
-        </Typography>
+        <Typography variant="caption">{Format.fraction(pWinner)}</Typography>
       </Grid>
 
       <CountryView country={country1} isWinner={winner === country1} />
