@@ -45,12 +45,12 @@ export default function GameView({
         <Typography
           variant="caption"
           component="div"
-          sx={{ flexGrow: 1, fontSize: "50%", color: "gray" }}
+          sx={{ flexGrow: 0.5, fontSize: "25%", color: "gray" }}
         >
           {date}
         </Typography>
 
-        <Typography variant="caption">{Format.fraction(pWinner)}</Typography>
+        <Typography variant="caption" sx={{fontSize: "40%", color: "gray"}}>{Format.fraction(pWinner)}</Typography>
       </Grid>
 
       <CountryView country={country1} isWinner={winner === country1} />
