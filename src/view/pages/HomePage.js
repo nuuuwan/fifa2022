@@ -30,32 +30,39 @@ export default class HomePage extends Component {
       nRefresh: 0,
       maxNRefresh,
       cupProbability: null,
+      mode: "normal",
     };
   }
 
   componentDidMount() {
     this.refresh();
   }
-  refresh() {
+  refresh(mode) {
     const { nRefresh, maxNRefresh } = this.state;
-    const simulationResults = Simulate.random();
+    const simulationResults = Simulate.random(mode);
     const cupProbability = Simulate.getCupProbability(simulationResults);
     this.setState({
       simulationResults,
       cupProbability,
+      mode,
       nRefresh: nRefresh + 1,
     });
 
     if (nRefresh < maxNRefresh) {
-      setTimeout(this.refresh.bind(this), TIME_MS_REFRESH);
+      setTimeout(
+        function () {
+          this.refresh(mode);
+        }.bind(this),
+        TIME_MS_REFRESH
+      );
     }
   }
 
-  onClickRefresh() {
+  onClickMode(mode) {
     this.setState(
       { nRefresh: 0 },
       function () {
-        this.refresh();
+        this.refresh(mode);
       }.bind(this)
     );
   }
@@ -100,9 +107,7 @@ export default class HomePage extends Component {
           </table>
           <Typography variant="caption">Last Updated: Dec 3</Typography>
         </Box>
-        <CustomBottomNavigation
-          onClickRefresh={this.onClickRefresh.bind(this)}
-        />
+        <CustomBottomNavigation onClickMode={this.onClickMode.bind(this)} />
       </Box>
     );
   }

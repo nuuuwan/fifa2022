@@ -1,5 +1,5 @@
 import { Avatar, Box, Stack, Typography } from "@mui/material";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import Flags from "../../nonview/core/Flags";
 
@@ -26,20 +26,21 @@ export default function CountryView({ country, isWinner }) {
     <Box style={{ opacity, width }}>
       <Stack direction="row" gap={1}>
         <Box display="flex" justifyContent="center" alignItems="center" gap={1}>
-          <Avatar src={imageSrc} style={STYLE_IMAGE} />          
+          <Avatar src={imageSrc} style={STYLE_IMAGE} />
           {showLabels ? (
             <Typography variant="caption">{country}</Typography>
           ) : null}
-          {isWinner ? (<CheckCircleIcon
-            style={{
-              color,
-              opacity,
-              width: ICON_DIM / 2,
-              height: ICON_DIM / 2,
-            }}
-          />) : null}
+          {isWinner ? (
+            <CheckCircleIcon
+              style={{
+                color,
+                opacity,
+                width: ICON_DIM / 2,
+                height: ICON_DIM / 2,
+              }}
+            />
+          ) : null}
         </Box>
-        
       </Stack>
     </Box>
   );

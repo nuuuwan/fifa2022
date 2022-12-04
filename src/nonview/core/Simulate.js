@@ -19,15 +19,25 @@ export default class Simulate {
     return (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
   }
 
-  static playOffSingle(stageType, iGame, [country1, country2]) {
+  static playOffSingle(stageType, iGame, [country1, country2], mode) {
     const p1win = Simulate.getP(stageType, iGame, country1, country2);
-    return Math.random() < p1win ? country1 : country2;
+    if (p1win === 0 || p1win === 1) {
+      return p1win === 1 ? country1 : country2;
+    }
+    switch (mode) {
+      case "best":
+        return p1win > 0.5 ? country1 : country2;
+      case "worst":
+        return p1win < 0.5 ? country1 : country2;
+      default:
+        return Math.random() < p1win ? country1 : country2;
+    }
   }
 
-  static playOff(stageType, pairList) {
+  static playOff(stageType, pairList, mode) {
     return pairList
       .map(function (pair, iGame) {
-        return Simulate.playOffSingle(stageType, iGame, pair);
+        return Simulate.playOffSingle(stageType, iGame, pair, mode);
       })
       .reduce(function (pairLiscountry2, country) {
         if (
@@ -42,12 +52,12 @@ export default class Simulate {
       }, []);
   }
 
-  static random() {
+  static random(mode) {
     const r16 = R16;
-    const r8 = Simulate.playOff("r16", r16);
-    const r4 = Simulate.playOff("r8", r8);
-    const r2 = Simulate.playOff("r4", r4);
-    const r1 = Simulate.playOff("r2", r2);
+    const r8 = Simulate.playOff("r16", r16, mode);
+    const r4 = Simulate.playOff("r8", r8, mode);
+    const r2 = Simulate.playOff("r4", r4, mode);
+    const r1 = Simulate.playOff("r2", r2, mode);
 
     return {
       r16,

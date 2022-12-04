@@ -20,11 +20,12 @@ export default function GameView({
   const pWinner = winner === country1 ? p1 : 1 - p1;
 
   let background = "white";
-  if (pWinner > 0.5) {
-    background = "white";
-  } else {
-    const h = (30 * pWinner) / 0.5;
-    background = `hsla(${h},100%,50%,0.4)`;
+  if (pWinner < 0.5) {
+    const h = pWinner > 0.5 ? 210 : 0;
+    const s = 100;
+    const l = 80 - Math.abs(pWinner - 0.5) * 2 * 60;
+    const a = 0.33;
+    background = `hsla(${h},${s}%,${l}%,${a})`;
   }
 
   let opacity = 1;
