@@ -3,13 +3,13 @@ const R16 = [
   ["Netherlands", "USA"],
   ["Argentina", "Australia"],
 
-  // Dec 4 (Sun)  
-  ["France", "Poland"],
-  ["England", "Senegal"],
-
   // Dec 5 (Mon)    
   ["Japan", "Croatia"],
   ["Brazil", "South Korea"],
+
+  // Dec 4 (Sun)  
+  ["France", "Poland"],
+  ["England", "Senegal"],
   
   // Dec 6 (Tue)    
   ["Morocco", "Spain"],
