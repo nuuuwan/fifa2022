@@ -15,9 +15,8 @@ export default function GameView({
   const date = DAYS[stageType][iGame];
   const actualWinner = GAMES[stageType] ? GAMES[stageType][iGame] : null;
   let opacity = 1;
-  let background = "white";
   if (actualWinner) {
-    background = "lightgray";
+    opacity = 0.1;
   }
   const style = {
     border: "1px gray solid",
@@ -25,7 +24,6 @@ export default function GameView({
     padding: 2,
     margin: 2,
     opacity,
-    background,
   };
   return (
     <div style={style}>
