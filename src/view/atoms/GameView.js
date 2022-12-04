@@ -34,8 +34,8 @@ export default function GameView({
   const style = {
     border: `1px gray solid`,
     borderRadius: 12,
-    padding: 2.5,
-    margin: 1,
+    padding: 3,
+    margin: 2,
     opacity,
     background,
   };
@@ -45,7 +45,7 @@ export default function GameView({
         <Typography
           variant="caption"
           component="div"
-          sx={{ flexGrow: 0.5, fontSize: "25%", color: "gray" }}
+          sx={{ flexGrow: 0.5, fontSize: "20%", color: "gray" }}
         >
           {date}
         </Typography>
