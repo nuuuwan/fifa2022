@@ -15,9 +15,8 @@ export default class Simulate {
     }
 
     const p1 = ODDS[country1];
-    const p2 = ODDS[country2];  
+    const p2 = ODDS[country2];
     return (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
-
   }
 
   static playOffSingle(stageType, iGame, [country1, country2]) {
