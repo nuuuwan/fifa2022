@@ -11,13 +11,14 @@ const STYLE = {
   left: 0,
   right: 0,
 };
+const COLOR_ICON = '#800'
 
 export default function CustomBottomNavigation({ onClickRefresh }) {
   return (
     <Box style={STYLE}>
       <BottomNavigation>
         <BottomNavigationAction
-          icon={<CasinoIcon />}
+          icon={<CasinoIcon style={{color: COLOR_ICON, fontSize: "48px"}} />}
           onClick={onClickRefresh}
         />
       </BottomNavigation>
