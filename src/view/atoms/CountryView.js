@@ -26,7 +26,7 @@ export default function CountryView({ country, isWinner }) {
   return (
     <Box style={{ opacity, width }}>
       <Stack direction="row" gap={2}>
-        <WinnerIcon style={{ color , opacity}} />
+        <WinnerIcon style={{ color, opacity }} />
         <Avatar src={imageSrc} style={STYLE_IMAGE} />
         {showLabels ? (
           <Typography variant="caption">{country}</Typography>

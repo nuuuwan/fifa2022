@@ -22,7 +22,8 @@ const STYLE_BODY = {
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
-    const maxNRefresh = MIN_N_REFRESH + parseInt(Math.random() * (MAX_N_REFRESH - MIN_N_REFRESH));
+    const maxNRefresh =
+      MIN_N_REFRESH + parseInt(Math.random() * (MAX_N_REFRESH - MIN_N_REFRESH));
     this.state = { simulationResults: null, nRefresh: 0, maxNRefresh };
   }
 
@@ -30,7 +31,7 @@ export default class HomePage extends Component {
     this.refresh();
   }
   refresh() {
-    const {nRefresh, maxNRefresh} = this.state;
+    const { nRefresh, maxNRefresh } = this.state;
     const simulationResults = Simulate.random();
     this.setState({ simulationResults, nRefresh: nRefresh + 1 });
 
