@@ -34,7 +34,7 @@ export default function GameView({
   const style = {
     border: `1px gray solid`,
     borderRadius: 12,
-    padding: 3,
+    padding: 2.5,
     margin: 1,
     opacity,
     background,

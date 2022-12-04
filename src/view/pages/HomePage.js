@@ -14,7 +14,7 @@ const MAX_N_REFRESH = 10;
 const TIME_MS_REFRESH = 50;
 
 const STYLE_BODY = {
-  marginTop: 48,
+  marginTop: 40,
   marginBottom: 40,
   marginLeft: 40,
   overflow: "scroll",
@@ -87,7 +87,7 @@ export default class HomePage extends Component {
       <Box>
         <CustomHeader />
         <Box style={STYLE_BODY}>
-          <Typography variant="caption">
+          <Typography variant="caption" sx={{ fontSize: "33%" }}>
             Probability of this Scenario
           </Typography>
           <Typography variant="body1">
@@ -98,8 +98,9 @@ export default class HomePage extends Component {
               <tr>{renderedInner}</tr>
             </tbody>
           </table>
-          <Typography variant="caption">Last Updated</Typography>
-          <Typography variant="body1">Dec 3</Typography>
+          <Typography variant="caption" sx={{ fontSize: "33%" }}>
+            Last Updated: Dec 3
+          </Typography>
         </Box>
         <CustomBottomNavigation
           onClickRefresh={this.onClickRefresh.bind(this)}

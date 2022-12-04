@@ -7,7 +7,7 @@ const STYLE = {
   top: 0,
   left: 0,
   right: 0,
-  padding: 12,
+  padding: 6,
   background: "white",
   color: "black",
   zIndex: 1000,
@@ -26,7 +26,7 @@ export default function CustomHeader() {
           style={{ width: 30, height: 30 }}
           onClick={onClick}
         />
-        <Typography variant="h5">2022 FIFA World Cup</Typography>
+        <Typography variant="h6">2022 FIFA World Cup</Typography>
       </Stack>
     </Box>
   );
