@@ -8,8 +8,9 @@ import StageView from "../atoms/StageView";
 import CustomBottomNavigation from "../molecules/CustomBottomNavigation";
 import CustomHeader from "../molecules/CustomHeader";
 
+const MIN_N_REFRESH = 2;
 const MAX_N_REFRESH = 10;
-const TIME_MS_REFRESH = 50;
+const TIME_MS_REFRESH = 100;
 
 const STYLE_BODY = {
   marginTop: 72,
@@ -21,18 +22,19 @@ const STYLE_BODY = {
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = { simulationResults: null, nRefresh: 0 };
+    const maxNRefresh = MIN_N_REFRESH + parseInt(Math.random() * (MAX_N_REFRESH - MIN_N_REFRESH));
+    this.state = { simulationResults: null, nRefresh: 0, maxNRefresh };
   }
 
   componentDidMount() {
     this.refresh();
   }
   refresh() {
+    const {nRefresh, maxNRefresh} = this.state;
     const simulationResults = Simulate.random();
-    const nRefresh = this.state.nRefresh + 1;
-    this.setState({ simulationResults, nRefresh });
+    this.setState({ simulationResults, nRefresh: nRefresh + 1 });
 
-    if (nRefresh < MAX_N_REFRESH) {
+    if (nRefresh < maxNRefresh) {
       setTimeout(this.refresh.bind(this), TIME_MS_REFRESH);
     }
   }
