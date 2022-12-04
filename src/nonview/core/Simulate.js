@@ -5,15 +5,23 @@ import R16 from "../constants/R16";
 const P_NOISE = 0.05;
 
 export default class Simulate {
-  static playOffSingle(stageType, iGame, [country1, country2]) {
-    const p1 = ODDS[country1];
-    const p2 = ODDS[country2];
+  static getP(stageType, iGame, country1, country2) {
     const actualWinner = GAMES[stageType] ? GAMES[stageType][iGame] : null;
-    if (actualWinner) {
-      return actualWinner;
+    if (country1 === actualWinner) {
+      return 1;
+    }
+    if (country2 === actualWinner) {
+      return 0;
     }
 
-    const p1win = (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
+    const p1 = ODDS[country1];
+    const p2 = ODDS[country2];  
+    return (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
+
+  }
+
+  static playOffSingle(stageType, iGame, [country1, country2]) {
+    const p1win = Simulate.getP(stageType, iGame, country1, country2);
     return Math.random() < p1win ? country1 : country2;
   }
 
