@@ -3,6 +3,7 @@ import ODDS from "../constants/ODDS";
 import R16 from "../constants/R16";
 
 const P_NOISE = 0.05;
+const F_ODDS = 0.8;
 
 export default class Simulate {
   static getP(stageType, iGame, country1, country2) {
@@ -14,8 +15,8 @@ export default class Simulate {
       return 0;
     }
 
-    const p1 = ODDS[country1];
-    const p2 = ODDS[country2];
+    const p1 = Math.pow(ODDS[country1], F_ODDS);
+    const p2 = Math.pow(ODDS[country2], F_ODDS);
     return (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
   }
 
