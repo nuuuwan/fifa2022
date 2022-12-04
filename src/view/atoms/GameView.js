@@ -1,7 +1,8 @@
-import { Typography } from "@mui/material";
+import { Typography, Box, Grid } from "@mui/material";
 
 import DAYS from "../../nonview/constants/DAYS";
 import GAMES from "../../nonview/constants/GAMES";
+import Format from "../../nonview/core/Format";
 import Simulate from "../../nonview/core/Simulate";
 
 import CountryView from "./CountryView";
@@ -33,16 +34,27 @@ export default function GameView({
   const style = {
     border: `1px gray solid`,
     borderRadius: 12,
-    padding: 2,
-    margin: 2,
+    padding: 3,
+    margin: 1,
     opacity,
     background,
   };
   return (
-    <div style={style}>
-      <Typography variant="caption">{date}</Typography>
+    <Box style={style}>
+      <Grid container justify="flex-end" gap={2}>
+        <Typography
+          variant="caption"
+          component="div"
+          sx={{ flexGrow: 1, fontSize: "50%", color: "gray" }}
+        >
+          {date}
+        </Typography>
+
+        <Typography variant="caption">{Format.fraction(pWinner)}</Typography>
+      </Grid>
+
       <CountryView country={country1} isWinner={winner === country1} />
       <CountryView country={country2} isWinner={winner === country2} />
-    </div>
+    </Box>
   );
 }

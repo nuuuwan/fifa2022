@@ -2,6 +2,7 @@ import { Component } from "react";
 
 import { Box, CircularProgress, Typography } from "@mui/material";
 
+import Format from "../../nonview/core/Format";
 import Simulate from "../../nonview/core/Simulate";
 
 import StageView from "../atoms/StageView";
@@ -10,7 +11,7 @@ import CustomHeader from "../molecules/CustomHeader";
 
 const MIN_N_REFRESH = 2;
 const MAX_N_REFRESH = 10;
-const TIME_MS_REFRESH = 100;
+const TIME_MS_REFRESH = 50;
 
 const STYLE_BODY = {
   marginTop: 48,
@@ -18,21 +19,6 @@ const STYLE_BODY = {
   marginLeft: 40,
   overflow: "scroll",
 };
-
-function roundLog(i) {
-  const mask = Math.pow(10, parseInt(Math.log10(i)) - 1);
-  return parseInt(i / mask + 0.5) * mask;
-}
-
-function formatFraction(f) {
-  if (f < 0.01) {
-    return "1 in " + roundLog(1 / f).toLocaleString();
-  }
-  return Number(f).toLocaleString(undefined, {
-    style: "percent",
-    minimumFractionDigits: 0,
-  });
-}
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -105,7 +91,7 @@ export default class HomePage extends Component {
             Probability of this Scenario
           </Typography>
           <Typography variant="body1">
-            {formatFraction(cupProbability)}
+            {Format.fraction(cupProbability)}
           </Typography>
           <table>
             <tbody>
