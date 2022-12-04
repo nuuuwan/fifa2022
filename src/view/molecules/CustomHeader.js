@@ -8,8 +8,8 @@ const STYLE = {
   left: 0,
   right: 0,
   padding: 12,
-  background: "black",
-  color: "white",
+  background: "white",
+  color: "black",
   zIndex: 1000,
 };
 
@@ -18,8 +18,8 @@ export default function CustomHeader() {
   return (
     <Box style={STYLE}>
       <Stack direction={"row"} gap={1}>
-        <Avatar src={imageSrc} style={{ width: 32, height: 32 }} />
-        <Typography variant="h6">2022 FIFA World Cup</Typography>
+        <Avatar src={imageSrc} style={{ width: 30, height: 30 }} />
+        <Typography variant="h5">2022 FIFA World Cup</Typography>
       </Stack>
     </Box>
   );
