@@ -20,13 +20,13 @@ export default function CountryView({ country, isWinner }) {
   const imageSrc = Flags.getImageSrc(country);
   const showLabels = window.innerWidth > MIN_WIDTH_FOR_LABELS;
   const WinnerIcon = isWinner ? CheckBoxIcon : CancelIcon;
-  const opacity = isWinner ? 1 : 0.2;
-  const color = isWinner ? "darkgreen" : "red";
-  const width = showLabels ? 180 : 80;
+  const opacity = isWinner ? 1 : 0.25;
+  const color = isWinner ? "darkgreen" : "ghost";
+  const width = showLabels ? 150 : 60;
   return (
     <Box style={{ opacity, width }}>
       <Stack direction="row" gap={2}>
-        <WinnerIcon style={{ color }} />
+        <WinnerIcon style={{ color , opacity}} />
         <Avatar src={imageSrc} style={STYLE_IMAGE} />
         {showLabels ? (
           <Typography variant="caption">{country}</Typography>
