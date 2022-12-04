@@ -15,13 +15,17 @@ const STYLE = {
 
 export default function CustomHeader() {
   const imageSrc = process.env.PUBLIC_URL + "/logo512.png";
-  const onClick = function() {
+  const onClick = function () {
     window.location.reload();
-  }
+  };
   return (
     <Box style={STYLE}>
       <Stack direction={"row"} gap={1}>
-        <Avatar src={imageSrc} style={{ width: 30, height: 30 }} onClick={onClick} />
+        <Avatar
+          src={imageSrc}
+          style={{ width: 30, height: 30 }}
+          onClick={onClick}
+        />
         <Typography variant="h5">2022 FIFA World Cup</Typography>
       </Stack>
     </Box>
