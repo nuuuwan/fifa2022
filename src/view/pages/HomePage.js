@@ -15,7 +15,7 @@ const MAX_N_REFRESH = 10;
 const TIME_MS_REFRESH = 50;
 
 const STYLE_BODY = {
-  marginTop: 40,
+  marginTop: 20,
   marginBottom: 40,
   marginLeft: 20,
   overflow: "scroll",
