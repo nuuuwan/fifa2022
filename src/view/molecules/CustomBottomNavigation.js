@@ -20,6 +20,10 @@ export default function CustomBottomNavigation({ onClickMode }) {
     <Box style={STYLE}>
       <BottomNavigation>
         <BottomNavigationAction
+          icon={<ReorderIcon style={{ color: "#888", fontSize: "32px" }} />}
+          onClick={() => onClickMode("monteCarlo")}
+        />
+        <BottomNavigationAction
           icon={
             <VerticalAlignBottomIcon
               style={{ color: "#800", fontSize: "32px" }}
@@ -36,10 +40,6 @@ export default function CustomBottomNavigation({ onClickMode }) {
             <VerticalAlignTopIcon style={{ color: "#080", fontSize: "32px" }} />
           }
           onClick={() => onClickMode("best")}
-        />
-        <BottomNavigationAction
-          icon={<ReorderIcon style={{ color: "#888", fontSize: "32px" }} />}
-          onClick={() => onClickMode("monteCarlo")}
         />
       </BottomNavigation>
     </Box>
