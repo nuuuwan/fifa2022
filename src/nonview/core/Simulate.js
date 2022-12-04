@@ -1,5 +1,5 @@
 import R16 from "../constants/R16";
-import ODDS from "./ODDS";
+import ODDS from "../constants/ODDS"
 
 const P_NOISE = 0.05;
 
