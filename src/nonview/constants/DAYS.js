@@ -9,7 +9,12 @@ const DAYS = {
     "Dec 6 (Tue), 6pm",
     "Dec 6 (Tue), 10pm",
   ],
-  r8: ["Dec 9 (Fri), 10pm", "Dec 9 (Fri), 6pm",  "Dec 10 (Sat), 10pm", "Dec 10 (Sat), 6pm"],
+  r8: [
+    "Dec 9 (Fri), 10pm",
+    "Dec 9 (Fri), 6pm",
+    "Dec 10 (Sat), 10pm",
+    "Dec 10 (Sat), 6pm",
+  ],
   r4: ["Dec 13 (Tue), 10pm", "Dec 14 (Wed), 10pm"],
   r2: ["Dec 18 (Sun), 6pm"],
 };
