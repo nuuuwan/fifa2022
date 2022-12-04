@@ -20,7 +20,7 @@ export default function CountryView({ country, isWinner }) {
   const imageSrc = Flags.getImageSrc(country);
   const showLabels = window.innerWidth > MIN_WIDTH_FOR_LABELS;
   const WinnerIcon = isWinner ? CheckBoxIcon : CancelIcon;
-  const opacity = isWinner ? 1 : 0.25;
+  const opacity = isWinner ? 1 : 0.15;
   const color = isWinner ? "darkgreen" : "ghost";
   const width = showLabels ? 120 : 50;
 
