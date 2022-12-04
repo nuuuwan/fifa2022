@@ -8,7 +8,7 @@ import Simulate from "../../nonview/core/Simulate";
 import CountryView from "../../view/atoms/CountryView";
 
 const N_ITERS = 1000;
-const TIME_MS_REFRESH = 200;
+const TIME_MS_REFRESH = 100;
 const MODE = "normal";
 
 const STYLE = {
@@ -35,7 +35,6 @@ export default class MonteCarloPage extends Component {
     let { countryToWins, iIter } = this.state;
     const simulationResults = Simulate.random(MODE);
     const winner = simulationResults.r1[0];
-    console.debug(iIter, winner);
 
     if (!countryToWins[winner]) {
       countryToWins[winner] = 0;
@@ -79,14 +78,14 @@ export default class MonteCarloPage extends Component {
         <table>
           <tbody>
             {sortedCountryAndWins.map(function ([country, nWins]) {
+              const key = "country-" + country;
               return (
-                <tr>
+                <tr key={key}>
                   <td>
                     <CountryView country={country} isWinner={true} />
                   </td>
                   <td>
                     <Typography
-                      inline
                       variant="body1"
                       align="right"
                       sx={{ fontSize: "100%" }}
@@ -95,7 +94,7 @@ export default class MonteCarloPage extends Component {
                     </Typography>
                   </td>
                   <td>
-                    <Typography inline variant="body1" align="right">
+                    <Typography variant="body1" align="right">
                       {Format.percent(nWins / iIter)}
                     </Typography>
                   </td>
@@ -107,7 +106,7 @@ export default class MonteCarloPage extends Component {
                 <Typography variant="body1">Total Simulations</Typography>
               </td>
               <td>
-                <Typography inline variant="body1" align="right">
+                <Typography variant="body1" align="right">
                   {iIter}
                 </Typography>
               </td>
