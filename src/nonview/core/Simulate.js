@@ -1,6 +1,6 @@
-import R16 from "../constants/R16";
-import ODDS from "../constants/ODDS";
 import GAMES from "../constants/GAMES";
+import ODDS from "../constants/ODDS";
+import R16 from "../constants/R16";
 
 const P_NOISE = 0.05;
 
@@ -8,10 +8,9 @@ export default class Simulate {
   static playOffSingle(stageType, iGame, [country1, country2]) {
     const p1 = ODDS[country1];
     const p2 = ODDS[country2];
-    if (GAMES[stageType]) {
-      if (iGame < GAMES[stageType].length) {
-        return GAMES[stageType][iGame];
-      }
+    const actualWinner = GAMES[stageType] ? GAMES[stageType][iGame] : null;
+    if (actualWinner) {
+      return actualWinner;
     }
 
     const p1win = (p1 + 0.5 * P_NOISE) / (p1 + p2 + P_NOISE);
