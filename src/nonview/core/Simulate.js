@@ -57,4 +57,36 @@ export default class Simulate {
       r1,
     };
   }
+
+  static getStageProbability(stageType, gameList, gameList2) {
+    const nGames = gameList.length;
+    let p = 1;
+    for (let iGame = 0; iGame < nGames; iGame++) {
+      const [country1, country2] = gameList[iGame];
+      const iGame2A = parseInt(iGame / 2);
+      const iGame2B = iGame % 2;
+      const winner = gameList2[iGame2A][iGame2B];
+      const p1 = Simulate.getP(stageType, iGame, country1, country2);
+      let pOutcome = winner === country1 ? p1 : 1 - p1;
+      p *= pOutcome;
+    }
+    return p;
+  }
+
+  static getCupProbability(simulationResults) {
+    const nStages = Object.keys(simulationResults).length;
+    let pCup = 1;
+    for (let iStage = 0; iStage < nStages - 1; iStage++) {
+      const stageType = Object.keys(simulationResults)[iStage];
+      const gameList = Object.values(simulationResults)[iStage];
+      const gameList2 = Object.values(simulationResults)[iStage + 1];
+      const pStage = Simulate.getStageProbability(
+        stageType,
+        gameList,
+        gameList2
+      );
+      pCup *= pStage;
+    }
+    return pCup;
+  }
 }

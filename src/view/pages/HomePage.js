@@ -19,12 +19,32 @@ const STYLE_BODY = {
   overflow: "scroll",
 };
 
+function roundLog(i) {
+  const mask = Math.pow(10, parseInt(Math.log10(i)) - 1);
+  return parseInt(i / mask + 0.5) * mask;
+}
+
+function formatFraction(f) {
+  if (f < 0.01) {
+    return "1 in " + roundLog(1 / f).toLocaleString();
+  }
+  return Number(f).toLocaleString(undefined, {
+    style: "percent",
+    minimumFractionDigits: 0,
+  });
+}
+
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
     const maxNRefresh =
       MIN_N_REFRESH + parseInt(Math.random() * (MAX_N_REFRESH - MIN_N_REFRESH));
-    this.state = { simulationResults: null, nRefresh: 0, maxNRefresh };
+    this.state = {
+      simulationResults: null,
+      nRefresh: 0,
+      maxNRefresh,
+      cupProbability: null,
+    };
   }
 
   componentDidMount() {
@@ -33,7 +53,12 @@ export default class HomePage extends Component {
   refresh() {
     const { nRefresh, maxNRefresh } = this.state;
     const simulationResults = Simulate.random();
-    this.setState({ simulationResults, nRefresh: nRefresh + 1 });
+    const cupProbability = Simulate.getCupProbability(simulationResults);
+    this.setState({
+      simulationResults,
+      cupProbability,
+      nRefresh: nRefresh + 1,
+    });
 
     if (nRefresh < maxNRefresh) {
       setTimeout(this.refresh.bind(this), TIME_MS_REFRESH);
@@ -50,7 +75,7 @@ export default class HomePage extends Component {
   }
 
   render() {
-    const { simulationResults } = this.state;
+    const { simulationResults, cupProbability } = this.state;
     if (!simulationResults) {
       return <CircularProgress />;
     }
@@ -76,12 +101,19 @@ export default class HomePage extends Component {
       <Box>
         <CustomHeader />
         <Box style={STYLE_BODY}>
-          <Typography variant="caption">Last Updated: Dec 3</Typography>
+          <Typography variant="caption">
+            Probability of this Scenario
+          </Typography>
+          <Typography variant="body1">
+            {formatFraction(cupProbability)}
+          </Typography>
           <table>
             <tbody>
               <tr>{renderedInner}</tr>
             </tbody>
           </table>
+          <Typography variant="caption">Last Updated</Typography>
+          <Typography variant="body1">Dec 3</Typography>
         </Box>
         <CustomBottomNavigation
           onClickRefresh={this.onClickRefresh.bind(this)}
