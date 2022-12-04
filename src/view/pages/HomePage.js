@@ -8,6 +8,7 @@ import Simulate from "../../nonview/core/Simulate";
 import StageView from "../atoms/StageView";
 import CustomBottomNavigation from "../molecules/CustomBottomNavigation";
 import CustomHeader from "../molecules/CustomHeader";
+import MonteCarloPage from "./MonteCarloPage";
 
 const MIN_N_REFRESH = 2;
 const MAX_N_REFRESH = 10;
@@ -67,7 +68,7 @@ export default class HomePage extends Component {
     );
   }
 
-  render() {
+  renderSchedule() {
     const { simulationResults, cupProbability } = this.state;
     if (!simulationResults) {
       return <CircularProgress />;
@@ -105,6 +106,27 @@ export default class HomePage extends Component {
               <tr>{renderedInner}</tr>
             </tbody>
           </table>
+          <Typography variant="caption">Last Updated: Dec 3</Typography>
+        </Box>
+        <CustomBottomNavigation onClickMode={this.onClickMode.bind(this)} />
+      </Box>
+    );
+  }
+
+  renderBody() {
+    const { mode } = this.state;
+    if (mode === "monteCarlo") {
+      return <MonteCarloPage />;
+    }
+    return this.renderSchedule();
+  }
+
+  render() {
+    return (
+      <Box>
+        <CustomHeader />
+        <Box style={STYLE_BODY}>
+          {this.renderBody()}
           <Typography variant="caption">Last Updated: Dec 3</Typography>
         </Box>
         <CustomBottomNavigation onClickMode={this.onClickMode.bind(this)} />

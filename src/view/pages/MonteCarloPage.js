@@ -8,12 +8,12 @@ import Simulate from "../../nonview/core/Simulate";
 import CountryView from "../../view/atoms/CountryView";
 
 const N_ITERS = 1000;
-const TIME_MS_REFRESH = 1000;
+const TIME_MS_REFRESH = 200;
 const MODE = "normal";
 
 const STYLE = {
   margin: 32,
-};
+}
 
 export default class MonteCarloPage extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ export default class MonteCarloPage extends Component {
             function () {
               this.refresh();
             }.bind(this),
-            TIME_MS_REFRESH / Math.sqrt(iIter)
+            TIME_MS_REFRESH / (Math.log10(iIter) + 1)
           );
         }
       }

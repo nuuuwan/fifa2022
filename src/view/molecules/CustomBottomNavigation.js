@@ -4,6 +4,7 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Box from "@mui/material/Box";
 import CasinoIcon from "@mui/icons-material/Casino";
+import ReorderIcon from "@mui/icons-material/Reorder";
 import VerticalAlignBottomIcon from "@mui/icons-material/VerticalAlignBottom";
 import VerticalAlignTopIcon from "@mui/icons-material/VerticalAlignTop";
 
@@ -35,6 +36,10 @@ export default function CustomBottomNavigation({ onClickMode }) {
             <VerticalAlignTopIcon style={{ color: "#080", fontSize: "32px" }} />
           }
           onClick={() => onClickMode("best")}
+        />
+        <BottomNavigationAction
+          icon={<ReorderIcon style={{ color: "#888", fontSize: "32px" }} />}
+          onClick={() => onClickMode("monteCarlo")}
         />
       </BottomNavigation>
     </Box>
