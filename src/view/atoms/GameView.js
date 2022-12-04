@@ -29,7 +29,7 @@ export default function GameView({
 
   let opacity = 1;
   if (actualWinner) {
-    opacity = 0.1;
+    background = `#eee`;
   }
   const style = {
     border: `1px gray solid`,
@@ -45,7 +45,7 @@ export default function GameView({
         <Typography variant="caption" sx={{ color: "gray" }}>
           {date}
         </Typography>
-        <Typography variant="caption">{Format.fraction(pWinner)}</Typography>
+        <Typography variant="caption">{Format.percent(pWinner)}</Typography>
       </Grid>
 
       <CountryView country={country1} isWinner={winner === country1} />
