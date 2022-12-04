@@ -50,7 +50,9 @@ export default function GameView({
           {date}
         </Typography>
 
-        <Typography variant="caption" sx={{fontSize: "40%", color: "gray"}}>{Format.fraction(pWinner)}</Typography>
+        <Typography variant="caption" sx={{ fontSize: "40%", color: "gray" }}>
+          {Format.fraction(pWinner)}
+        </Typography>
       </Grid>
 
       <CountryView country={country1} isWinner={winner === country1} />
