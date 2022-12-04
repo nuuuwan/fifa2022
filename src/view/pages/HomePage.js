@@ -87,10 +87,10 @@ export default class HomePage extends Component {
       <Box>
         <CustomHeader />
         <Box style={STYLE_BODY}>
-          <Typography variant="caption" sx={{ fontSize: "33%" }}>
+          <Typography variant="caption" sx={{ fontSize: "50%" }}>
             Probability of this Scenario
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="h5">
             {Format.fraction(cupProbability)}
           </Typography>
           <table>
@@ -98,7 +98,7 @@ export default class HomePage extends Component {
               <tr>{renderedInner}</tr>
             </tbody>
           </table>
-          <Typography variant="caption" sx={{ fontSize: "33%" }}>
+          <Typography variant="caption">
             Last Updated: Dec 3
           </Typography>
         </Box>

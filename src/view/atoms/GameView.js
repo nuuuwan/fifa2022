@@ -41,16 +41,11 @@ export default function GameView({
   };
   return (
     <Box style={style}>
-      <Grid container justify="flex-end" gap={2}>
-        <Typography
-          variant="caption"
-          component="div"
-          sx={{ flexGrow: 0.5, fontSize: "20%", color: "gray" }}
-        >
+      <Grid container justify="flex-end" gap={0.5}>
+        <Typography variant="caption" sx={{color: "gray"}}>
           {date}
         </Typography>
-
-        <Typography variant="caption" sx={{ fontSize: "40%", color: "gray" }}>
+        <Typography variant="caption">
           {Format.fraction(pWinner)}
         </Typography>
       </Grid>
