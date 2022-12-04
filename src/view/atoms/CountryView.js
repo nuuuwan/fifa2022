@@ -23,10 +23,14 @@ export default function CountryView({ country, isWinner }) {
   const opacity = isWinner ? 1 : 0.25;
   const color = isWinner ? "darkgreen" : "ghost";
   const width = showLabels ? 150 : 60;
+  const iconWidth = 20;
+  const iconHeight = iconWidth;
   return (
     <Box style={{ opacity, width }}>
       <Stack direction="row" gap={2}>
-        <WinnerIcon style={{ color, opacity }} />
+        <WinnerIcon
+          style={{ color, opacity, width: iconWidth, height: iconHeight }}
+        />
         <Avatar src={imageSrc} style={STYLE_IMAGE} />
         {showLabels ? (
           <Typography variant="caption">{country}</Typography>
