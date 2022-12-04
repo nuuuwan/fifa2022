@@ -18,7 +18,7 @@ export default function CustomBottomNavigation({ onClickRefresh }) {
     <Box style={STYLE}>
       <BottomNavigation>
         <BottomNavigationAction
-          icon={<CasinoIcon style={{ color: COLOR_ICON, fontSize: "48px" }} />}
+          icon={<CasinoIcon style={{ color: COLOR_ICON, fontSize: "32px" }} />}
           onClick={onClickRefresh}
         />
       </BottomNavigation>
