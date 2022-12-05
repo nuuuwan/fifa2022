@@ -12,14 +12,14 @@ const STYLE_IMAGE = {
   margin: 1,
 };
 
-export default function CountryView({ country, isWinner, showFull }) {
+export default function CountryView({ country, isWinner, isActualWinner, showFull }) {
   if (!country) {
     return null;
   }
   const imageSrc = Flags.getImageSrc(country);
   const showLabels = window.innerWidth > MIN_WIDTH_FOR_LABELS || showFull;
   const opacity = isWinner ? 1 : 0.2;
-  const color = isWinner ? "darkgreen" : "gray";
+  const color = isActualWinner ? "darkgreen" : isWinner ? "orange" : "gray";
   const width = showLabels ? 120 : 50;
 
   return (
