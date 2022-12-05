@@ -12,7 +12,12 @@ const STYLE_IMAGE = {
   margin: 1,
 };
 
-export default function CountryView({ country, isWinner, isActualWinner, showFull }) {
+export default function CountryView({
+  country,
+  isWinner,
+  isActualWinner,
+  showFull,
+}) {
   if (!country) {
     return null;
   }

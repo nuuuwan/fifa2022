@@ -49,8 +49,16 @@ export default function GameView({
         <Typography variant="caption">{Format.percent(pWinner)}</Typography>
       </Grid>
 
-      <CountryView country={country1} isWinner={winner === country1} isActualWinner={isActualWinner} />
-      <CountryView country={country2} isWinner={winner === country2} isActualWinner={isActualWinner}/>
+      <CountryView
+        country={country1}
+        isWinner={winner === country1}
+        isActualWinner={isActualWinner}
+      />
+      <CountryView
+        country={country2}
+        isWinner={winner === country2}
+        isActualWinner={isActualWinner}
+      />
     </Box>
   );
 }
