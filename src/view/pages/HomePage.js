@@ -127,7 +127,7 @@ export default class HomePage extends Component {
         <CustomHeader />
         <Box style={STYLE_BODY}>
           {this.renderBody()}
-          <Typography variant="caption">Last Updated: Dec 3</Typography>
+          <Typography variant="caption">Last Updated: Dec 4</Typography>
         </Box>
         <CustomBottomNavigation onClickMode={this.onClickMode.bind(this)} />
       </Box>
