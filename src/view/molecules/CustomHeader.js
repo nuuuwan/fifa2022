@@ -26,7 +26,7 @@ export default function CustomHeader() {
           style={{ width: 30, height: 30 }}
           onClick={onClick}
         />
-        <Typography variant="h6">2022 FIFA World Cup</Typography>
+        <Typography variant="h4">2022 FIFA World Cup</Typography>
       </Stack>
     </Box>
   );
