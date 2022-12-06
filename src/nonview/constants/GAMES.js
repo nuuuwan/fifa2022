@@ -1,5 +1,5 @@
 const GAMES = {
-  r16: ["Netherlands", "Argentina", "", "", "France", "England"],
+  r16: ["Netherlands", "Argentina", "Croatia", "Brazil", "France", "England"],
 };
 
 export default GAMES;

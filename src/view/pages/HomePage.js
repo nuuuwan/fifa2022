@@ -106,7 +106,7 @@ export default class HomePage extends Component {
               <tr>{renderedInner}</tr>
             </tbody>
           </table>
-          <Typography variant="caption">Last Updated: Dec 3</Typography>
+          <Typography variant="caption">Last Updated: Dec 5</Typography>
         </Box>
         <CustomBottomNavigation onClickMode={this.onClickMode.bind(this)} />
       </Box>
