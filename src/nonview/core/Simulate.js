@@ -2,7 +2,7 @@ import GAMES from "../constants/GAMES";
 import ODDS from "../constants/ODDS";
 import R16 from "../constants/R16";
 
-const P_NOISE = 0.05;
+const P_NOISE = 0.2;
 const F_ODDS = 0.8;
 
 export default class Simulate {
