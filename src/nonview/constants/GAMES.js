@@ -9,6 +9,7 @@ const GAMES = {
     "Morocco",
     "Portugal",
   ],
+  r8: ["Argentina", "Croatia"],
 };
 
 export default GAMES;
